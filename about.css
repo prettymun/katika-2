@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-content{
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(224, 216, 207);
+    background-size: cover;
+    background-position: 70%;
+}
+
+.content{
+    margin-top: 150px;
+    margin-left: 60px;
+    background-color: rgb(224, 216, 207);
+}
+.content h1{
+    font-size: 50px;
+}
+#btn1 button{
+    width: 150px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid black;
+    letter-spacing: 3px;
+    font-weight: bold;
+    transition: 0.5s ease;
+    cursor: pointer;
+    position: left;
+}
+#btn1 button:hover{
+    background-color: lightsalmon;
+}
+@media screen and (max-width:420px){
+    .content h1{
+        font-size: 30px;
+    }
+}
+.hide-content {
+    display: none; /* or add styles to move the content down */
+}
+/* content */
+
+
+.navbar-nav .nav-item .nav-link {
+    color: black;
+    position: relative;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after,
+.navbar-nav .nav-item .nav-link:focus::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust the thickness of the line */
+    width: 100%;
+    height: 2px; /* Adjust the thickness of the line */
+    background-color: blue; /* Color of the line on hover */
+}
+/* Services grid gap */
+#services .row > .col-md-4 {
+    margin-bottom: 20px; /* Add margin between columns */
+}
+
+
+
+/* Client testimonials pictures of the same size */
+.testimonial-img {
+    width: 300px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 50%; /* Make them circular */
+}
+/* footer */
+#footer{
+    width: 100%;
+    background-color: rgb(224, 216, 207);
+    margin-top: 100px;
+}
+#footer h1{
+    color: white;
+    padding-top: 30px;
+}
+#footer p{
+    color: white;
+}
+.social-links{
+    color: rgba(238,224,208);
+    font-size: 30px;
+    cursor: pointer;
+}
+.copyright{
+    color: white;
+    margin-top: 20px;
+}
+.credite{
+    color: white;
+}
+/* footer */

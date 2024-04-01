@@ -1,0 +1,361 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main-content{
+    width: 100%;
+    height: 90vh;
+        background-size: cover;
+    background-position: 70%;
+}
+
+/* navbar */
+#navbar-color{
+    background-color: rgba(238,224,208);
+}
+
+
+.navbar-nav {
+    margin: auto;
+}
+
+.nav-link {
+    margin-left: 30px;
+    font-weight: bold;
+    color: black;
+    transition: 0.5s ease;
+    cursor: pointer;
+    position: relative; /* Added */
+}
+
+.nav-link:hover {
+    display: block;
+}
+input{
+    display: none;
+}
+.container{
+    width: 100%;
+    text-align: center;
+}
+h1{
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+}
+h1::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: crimson;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 100px;
+    }
+    50%{
+        width: 200px;
+    }
+    100%{
+        width: 100px;
+    }
+}
+
+.top-content{
+    font-family: "Playfair Display", serif;
+    background-color: rgb(243, 243, 243);
+    width: 90%;
+    margin: 0 auto 20px auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px lightgray ;
+}
+h3{
+    height: 100%;
+    background-color: rgb(221, 221, 221);
+    line-height: 50px;
+    padding: 0 50px;
+    color: white;
+}
+.menu-toggle {
+    display: none; /* Hide by default */
+}
+
+.top-content {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .top-content {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 9999; /* Ensure it's on top of other content */
+    }
+}
+
+
+label{
+    display: inline-block;
+    height: 100%;
+    width: 100vw;
+    padding: 0 10px;
+    margin: 0;
+    line-height: 60px;
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+    transition: .5s;
+}
+label:hover{
+    color: brown;
+}
+.photo-gallery{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+.pic{
+    position: relative;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px lightgray;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.pic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: .5s;
+}
+.pic::before{
+    content: "PHOTO GALLERY";
+    position: absolute;
+    font-family: "Playfair Display", serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 22px;
+    font-weight: 300;
+    width: 100%;
+    margin-top: -100px;
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .2s;
+    z-index: 1;
+
+}
+.pic::after{
+    content: '';
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    height: 0;
+    background-color: rgba(8, 8, 8, 0.4);
+    transition: .3s;
+}
+.pic:hover::after{
+    height: 100%;
+}
+.pic:hover::before{
+    margin-top: 0;
+    opacity: 1;
+}
+#check1:checked ~ .container .photo-gallery .pic{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: .5s;
+}
+
+#check2:checked ~ .container .photo-gallery .corp{
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    transition: .5s;
+}
+#check2:checked ~ .container .photo-gallery .wedding, 
+#check2:checked ~ .container .photo-gallery .vacay, 
+#check2:checked ~ .container .photo-gallery .team, 
+#check2:checked ~ .container .photo-gallery .fitness
+{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: .5s;
+}
+
+#check3:checked ~ .container .photo-gallery .wedding{
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    transition: .5s;
+}
+#check3:checked ~ .container .photo-gallery .corp, 
+#check3:checked ~ .container .photo-gallery .vacay, 
+#check3:checked ~ .container .photo-gallery .team, 
+#check3:checked ~ .container .photo-gallery .fitness
+{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: .5s;
+}
+
+#check4:checked ~ .container .photo-gallery .vacay{
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    transition: .5s;
+}
+#check4:checked ~ .container .photo-gallery .corp, 
+#check4:checked ~ .container .photo-gallery .wedding, 
+#check4:checked ~ .container .photo-gallery .team, 
+#check4:checked ~ .container .photo-gallery .fitness
+{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: .5s;
+}
+
+#check5:checked ~ .container .photo-gallery .team{
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    transition: .5s;
+}
+#check5:checked ~ .container .photo-gallery .corp, 
+#check5:checked ~ .container .photo-gallery .wedding, 
+#check5:checked ~ .container .photo-gallery .vacay, 
+#check5:checked ~ .container .photo-gallery .fitness
+{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: .5s;
+}
+
+#check6:checked ~ .container .photo-gallery .fitness{
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    transition: .5s;
+}
+#check6:checked ~ .container .photo-gallery .corp, 
+#check6:checked ~ .container .photo-gallery .wedding, 
+#check6:checked ~ .container .photo-gallery .team, 
+#check6:checked ~ .container .photo-gallery .vacay
+{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: .5s;
+}
+
+/* CSS code for responsive design */
+@media only screen and (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-link {
+        margin: 0 10px;
+    }
+
+    .top-content {
+        height: auto;
+    }
+
+    .top-content h3 {
+        line-height: normal;
+    }
+
+    label {
+        display: block;
+        width: auto;
+        padding: 5px 10px;
+        line-height: normal;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .top-content h3 {
+        font-size: 16px;
+    }
+
+    .pic {
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h1::before {
+        margin-top: -80px;
+    }
+
+    .pic::before {
+        font-size: 18px;
+    }
+}
+/* footer */
+#footer{
+    width: 100%;
+    background-color: black;
+    margin-top: 100px;
+}
+#footer h1{
+    color: white;
+    padding-top: 30px;
+}
+#footer p{
+    color: white;
+}
+.icons i{
+    color: rgba(238,224,208);
+    font-size: 30px;
+    cursor: pointer;
+}
+.copyright{
+    color: white;
+    margin-top: 20px;
+}
+.credite{
+    color: white;
+}
+/* footer */
